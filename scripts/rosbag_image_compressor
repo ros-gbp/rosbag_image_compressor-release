@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+# Copyright 2014 Open Source Robotics Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import argparse
+from rosbag_image_compressor import compress_image,\
+    uncompress_image, compress, uncompress
+
+command_description = """Compress or decompress images in a bag file. The
+compression is lossless via png. The compressed files are moved to the
+compressed topic such that they can be viewed via standard compressed image
+transport. However the data has not been reencoded. The bagfile stores the
+encoding in a parallel topic 'encoding' in string format for the
+decompression phase."""
+
+
+def main():
+    parser = argparse.ArgumentParser(description=command_description)
+    valid_modes = ['compress', 'decompress']
+    parser.add_argument('mode',
+                        action='store',
+                        choices=valid_modes,
+                        help='Operating mode, one of %s' % valid_modes)
+    parser.add_argument('input_bagfile',
+                        action='store',
+                        help='Input bag filename')
+    parser.add_argument('--output', '-O',
+                        dest='output_bagfile',
+                        action='store',
+                        help='Output filename. Default: INPUT_MODEed.bag')
+    args = parser.parse_args()
+    if not args.output_bagfile:
+        elements = os.path.splitext(args.input_bagfile)
+        args.output_bagfile = elements[0] + "_%sed" % args.mode + elements[1]
+
+    if args.mode == 'compress':
+        compress(args.input_bagfile, args.output_bagfile)
+    elif args.mode == 'decompress':
+        uncompress(args.input_bagfile, args.output_bagfile)
+
+if __name__ == '__main__':
+    main()
