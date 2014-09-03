@@ -1,0 +1,9 @@
+ros-indigo-rosbag-image-compressor (0.1.0-1trusty) trusty; urgency=high
+
+  * Create package for png compression of images in bagfiles and then
+    uncompressing.
+  * Contributors: Tully Foote
+
+ -- Tully Foote <tfoote@osrfoundation.org>  Tue, 02 Sep 2014 07:00:00 -0000
+
+
