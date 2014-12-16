@@ -1,3 +1,24 @@
+## rosbag_image_compressor (indigo) - 0.1.4-0
+
+The packages in the `rosbag_image_compressor` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -t indigo -r indigo rosbag_image_compressor` on `Tue, 16 Dec 2014 07:54:28 -0000`
+
+The `rosbag_image_compressor` package was released.
+
+Version of package(s) in repository `rosbag_image_compressor`:
+- upstream repository: https://github.com/ros/rosbag_image_compressor.git
+- release repository: https://github.com/ros-gbp/rosbag_image_compressor-release.git
+- rosdistro version: `0.1.3-0`
+- old version: `0.1.3-0`
+- new version: `0.1.4-0`
+
+Versions of tools used:
+- bloom version: `0.5.16`
+- catkin_pkg version: `0.2.6`
+- rosdep version: `0.10.33`
+- rosdistro version: `0.4.0`
+- vcstools version: `0.1.35`
+
+
 ## rosbag_image_compressor (indigo) - 0.1.3-0
 
 The packages in the `rosbag_image_compressor` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -r indigo -t indigo rosbag_image_compressor` on `Fri, 05 Sep 2014 00:58:11 -0000`
