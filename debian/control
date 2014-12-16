@@ -1,0 +1,12 @@
+Source: ros-hydro-rosbag-image-compressor
+Section: misc
+Priority: extra
+Maintainer: Tully Foote <tfoote@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-hydro-catkin, ros-hydro-rosbag, ros-hydro-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-hydro-rosbag-image-compressor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-imaging, ros-hydro-rosbag, ros-hydro-sensor-msgs
+Description: The rosbag_image_compressor package. This package has a script to compress and decompress images inside a bag file.
